@@ -1,11 +1,13 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import MapFunction from "./components/MapFunction";
+import DynamicGrid from "./components/DynamicGrid";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <MapFunction />
+      {/* <MapFunction /> */}
+      {/* <DynamicGrid /> */}
       <StatusBar style="auto" />
     </View>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 
-const DynamicGrid = () => {
+const FlatList = () => {
   const users = [
     {
       id: 1,
@@ -132,4 +132,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export default DynamicGrid;
+export default FlatList;
