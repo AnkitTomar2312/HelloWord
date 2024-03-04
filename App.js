@@ -3,13 +3,15 @@ import { StyleSheet, Text, View } from "react-native";
 import MapFunction from "./components/MapFunction";
 import DynamicGrid from "./components/DynamicGrid";
 import FlatList from "./components/FaltList";
+import SectionList from "./components/SectionList";
 
 export default function App() {
   return (
     <View style={styles.container}>
       {/* <MapFunction /> */}
       {/* <DynamicGrid /> */}
-      <FlatList />
+      {/* <FlatList /> */}
+      <SectionList />
       <StatusBar style="auto" />
     </View>
   );
