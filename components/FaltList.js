@@ -1,7 +1,7 @@
 import React from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View, FlatList } from "react-native";
 
-const FlatList = () => {
+const Flatlist = () => {
   const users = [
     {
       id: 1,
@@ -86,26 +86,24 @@ const FlatList = () => {
   ];
   return (
     <View>
-      <Text style={styles.heading}>Dynamic Grid</Text>
+      <Text style={styles.heading}>Flat List</Text>
       <ScrollView>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
-          {users.map((item) => {
-            return (
-              <Text style={styles.listItem} key={item.id}>
-                {item.name}
-              </Text>
-            );
-          })}
-        </View>
+        <FlatList
+          data={users}
+          renderItem={({ item }) => <UserData item={item} />}
+          keyExtractor={users.id}
+        />
       </ScrollView>
+    </View>
+  );
+};
+
+const UserData = (props) => {
+  const item = props.item;
+  return (
+    <View style={styles.box}>
+      <Text style={styles.listItem}>{item.id}</Text>
+      <Text style={styles.listItem}>{item.name}</Text>
     </View>
   );
 };
@@ -129,7 +127,11 @@ const styles = StyleSheet.create({
     textAlignVertical: "center",
   },
   box: {
-    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-around",
+    borderColor: "red",
+    borderWidth: 1,
+    borderStyle: "dashed",
   },
 });
-export default FlatList;
+export default Flatlist;
